@@ -13,11 +13,19 @@ Coffee.mainPage = SC.Page.design
       addButton: SC.ButtonView.design
         layout: { centerY: 0, height: 24, right: 12, width: 100 }
         title:  "Add Task"
+        target: "Coffee.tasksController"
+        action: "addTask"
     middleView: SC.ScrollView.design
       hasHorizontalScroller: NO
       layout: { top: 36, bottom: 32, left: 0, right: 0 }
       backgroundColor: 'white'
-      contentView: SC.ListView.design {}
+      contentView: SC.ListView.design
+        contentBinding: 'Coffee.tasksController.arrangedObjects'
+        selectionBinding: 'Coffee.tasksController.selection'
+        contentValueKey: "description"
+        contentCheckboxKey: "isDone"
+        canEditContent: YES
+        canDeleteContent: YES
     bottomView: SC.ToolbarView.design
       layout: { bottom: 0, left: 0, right: 0, height: 32 }
       childViews: 'summaryView'.w()
@@ -25,5 +33,5 @@ Coffee.mainPage = SC.Page.design
       summaryView: SC.LabelView.design
         layout: { centerY: 0, height: 18, left: 20, right: 20 }
         textAlign: SC.ALIGN_CENTER
-        value: "Item Count"
+        valueBinding: "Coffee.tasksController.summary"
 
