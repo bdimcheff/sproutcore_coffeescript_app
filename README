@@ -1,7 +1,9 @@
 =============================================================================
-Project:   Coffeescript-test
-Copyright: ©2010 My Company, Inc.
+Project: SproutCore CoffeeScript Tasks App
+Copyright: ©2010 Brandon Dimcheff
+
+Released under the terms of the MIT License.
 =============================================================================
 
-TODO: Describe Your Project
+This is a replication of some of the SproutCore Todos tutorials using CoffeeScript instead of JavaScript.
 
